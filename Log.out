@@ -143,14 +143,14 @@ quantTranscriptomeBan             IndelSoftclipSingleend
 twopass1readsN                    18446744073709551615
 twopassMode                       None
 ##### Command Line:
-STAR --runMode genomeGenerate --runThreadN 12 --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3 --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa.gz --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf.gz --sjdbOverhang 50
+STAR --runMode genomeGenerate --runThreadN 12 --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3 --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf --sjdbOverhang 50
 ##### Initial USER parameters from Command Line:
 ###### All USER parameters from Command Line:
 runMode                       genomeGenerate     ~RE-DEFINED
 runThreadN                    12     ~RE-DEFINED
 genomeDir                     /cndd3/dburrows/DATA/annotations/genome/grcm38.p3     ~RE-DEFINED
-genomeFastaFiles              /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa.gz        ~RE-DEFINED
-sjdbGTFfile                   /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf.gz     ~RE-DEFINED
+genomeFastaFiles              /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa        ~RE-DEFINED
+sjdbGTFfile                   /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf     ~RE-DEFINED
 sjdbOverhang                  50     ~RE-DEFINED
 ##### Finished reading parameters from all sources
 
@@ -158,13 +158,13 @@ sjdbOverhang                  50     ~RE-DEFINED
 runMode                           genomeGenerate
 runThreadN                        12
 genomeDir                         /cndd3/dburrows/DATA/annotations/genome/grcm38.p3
-genomeFastaFiles                  /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa.gz   
-sjdbGTFfile                       /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf.gz
+genomeFastaFiles                  /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa   
+sjdbGTFfile                       /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf
 sjdbOverhang                      50
 
 -------------------------------
 ##### Final effective command line:
-STAR   --runMode genomeGenerate   --runThreadN 12   --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3   --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa.gz      --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf.gz   --sjdbOverhang 50
+STAR   --runMode genomeGenerate   --runThreadN 12   --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3   --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa      --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf   --sjdbOverhang 50
 
 ##### Final parameters after user input--------------------------------:
 versionSTAR                       20201
@@ -177,7 +177,7 @@ runDirPerm                        User_RWX
 runRNGseed                        777
 genomeDir                         /cndd3/dburrows/DATA/annotations/genome/grcm38.p3
 genomeLoad                        NoSharedMemory
-genomeFastaFiles                  /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa.gz   
+genomeFastaFiles                  /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa   
 genomeSAindexNbases               14
 genomeChrBinNbits                 18
 genomeSAsparseD                   1
@@ -295,7 +295,7 @@ chimOutType                       SeparateSAMold
 chimFilter                        banGenomicN   
 chimSegmentReadGapMax             0
 sjdbFileChrStartEnd               -   
-sjdbGTFfile                       /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf.gz
+sjdbGTFfile                       /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf
 sjdbGTFchrPrefix                  -
 sjdbGTFfeatureExon                exon
 sjdbGTFtagExonParentTranscript    transcript_id
@@ -311,9 +311,157 @@ twopassMode                       None
 ----------------------------------------
 
 Finished loading and checking parameters
-Feb 08 23:34:14 ... starting to generate Genome files
+Feb 08 23:38:27 ... starting to generate Genome files
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 0  "chr1" chrStart: 0
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 1  "chr2" chrStart: 195559424
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 2  "chr3" chrStart: 377749504
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 3  "chr4" chrStart: 537919488
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 4  "chr5" chrStart: 694681600
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 5  "chr6" chrStart: 846725120
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 6  "chr7" chrStart: 996671488
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 7  "chr8" chrStart: 1142161408
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 8  "chr9" chrStart: 1271660544
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 9  "chr10" chrStart: 1396441088
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 10  "chr11" chrStart: 1527250944
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 11  "chr12" chrStart: 1649410048
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 12  "chr13" chrStart: 1769734144
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 13  "chr14" chrStart: 1890320384
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 14  "chr15" chrStart: 2015363072
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 15  "chr16" chrStart: 2119434240
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 16  "chr17" chrStart: 2217738240
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 17  "chr18" chrStart: 2312896512
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 18  "chr19" chrStart: 2403860480
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 19  "chrX" chrStart: 2465464320
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 20  "chrY" chrStart: 2636644352
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 21  "chrM" chrStart: 2728394752
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 22  "KB469738.1" chrStart: 2728656896
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 23  "JH792830.1" chrStart: 2728919040
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 24  "KB469739.1" chrStart: 2729181184
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 25  "KB469741.1" chrStart: 2729705472
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 26  "JH792829.1" chrStart: 2730229760
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 27  "JH792826.1" chrStart: 2730754048
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 28  "JH792828.1" chrStart: 2731278336
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 29  "KB469740.1" chrStart: 2731802624
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 30  "JH792832.1" chrStart: 2732326912
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 31  "JH792833.1" chrStart: 2733113344
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 32  "JH792827.1" chrStart: 2733375488
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 33  "JH792834.1" chrStart: 2733637632
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 34  "JH792831.1" chrStart: 2734161920
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 35  "KB469742.1" chrStart: 2734424064
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 36  "GL456210.1" chrStart: 2735734784
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 37  "GL456211.1" chrStart: 2735996928
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 38  "GL456212.1" chrStart: 2736259072
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 39  "GL456213.1" chrStart: 2736521216
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 40  "GL456216.1" chrStart: 2736783360
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 41  "GL456219.1" chrStart: 2737045504
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 42  "GL456221.1" chrStart: 2737307648
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 43  "GL456233.1" chrStart: 2737569792
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 44  "GL456239.1" chrStart: 2738094080
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 45  "GL456350.1" chrStart: 2738356224
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 46  "GL456354.1" chrStart: 2738618368
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 47  "GL456359.1" chrStart: 2738880512
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 48  "GL456360.1" chrStart: 2739142656
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 49  "GL456366.1" chrStart: 2739404800
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 50  "GL456367.1" chrStart: 2739666944
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 51  "GL456368.1" chrStart: 2739929088
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 52  "GL456370.1" chrStart: 2740191232
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 53  "GL456372.1" chrStart: 2740453376
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 54  "GL456378.1" chrStart: 2740715520
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 55  "GL456379.1" chrStart: 2740977664
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 56  "GL456381.1" chrStart: 2741239808
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 57  "GL456382.1" chrStart: 2741501952
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 58  "GL456383.1" chrStart: 2741764096
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 59  "GL456385.1" chrStart: 2742026240
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 60  "GL456387.1" chrStart: 2742288384
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 61  "GL456389.1" chrStart: 2742550528
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 62  "GL456390.1" chrStart: 2742812672
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 63  "GL456392.1" chrStart: 2743074816
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 64  "GL456393.1" chrStart: 2743336960
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 65  "GL456394.1" chrStart: 2743599104
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 66  "GL456396.1" chrStart: 2743861248
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 67  "JH584292.1" chrStart: 2744123392
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 68  "JH584293.1" chrStart: 2744385536
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 69  "JH584294.1" chrStart: 2744647680
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 70  "JH584295.1" chrStart: 2744909824
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 71  "JH584296.1" chrStart: 2745171968
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 72  "JH584297.1" chrStart: 2745434112
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 73  "JH584298.1" chrStart: 2745696256
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 74  "JH584299.1" chrStart: 2745958400
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 75  "JH584300.1" chrStart: 2747006976
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 76  "JH584301.1" chrStart: 2747269120
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 77  "JH584302.1" chrStart: 2747531264
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 78  "JH584303.1" chrStart: 2747793408
+/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 79  "JH584304.1" chrStart: 2748055552
+Number of SA indices: 5315685726
+Feb 08 23:40:13 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 37;   chunks size limit: 1275167224 bytes
+Feb 08 23:40:25 ... sorting Suffix Array chunks and saving them to disk...
+Writing 996537224 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_1 ; empty space on disk = 27620743839744 bytes ... done
+Writing 1062221376 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_0 ; empty space on disk = 27620085334016 bytes ... done
+Writing 1082476856 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_5 ; empty space on disk = 27619087089664 bytes ...Writing 1141938600 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_3 ; empty space on disk = 27619087089664 bytes ... done
+ done
+Writing 1126221352 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_6 ; empty space on disk = 27617252081664 bytes ...Writing 1170754728 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_2 ; empty space on disk = 27617252081664 bytes ...Writing 1221334376 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_4 ; empty space on disk = 27617252081664 bytes ...Writing 1185072824 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_9 ; empty space on disk = 27617252081664 bytes ...Writing 1192396840 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_11 ; empty space on disk = 27617252081664 bytes ...Writing 1236557912 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_8 ; empty space on disk = 27617252081664 bytes ...Writing 1208483928 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_10 ; empty space on disk = 27617241595904 bytes ...Writing 1261867480 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_7 ; empty space on disk = 27617241595904 bytes ... done
+ done
+ done
+ done
+ done
+ done
+ done
+ done
+Writing 1242510984 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_12 ; empty space on disk = 27607726817280 bytes ... done
+Writing 1224014952 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_13 ; empty space on disk = 27606835527680 bytes ... done
+Writing 1150493216 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_15 ; empty space on disk = 27605207089152 bytes ... done
+Writing 1217824296 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_14 ; empty space on disk = 27604633518080 bytes ... done
+Writing 1069172448 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_17 ; empty space on disk = 27603312312320 bytes ... done
+Writing 1161794256 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_16 ; empty space on disk = 27602535317504 bytes ... done
+Writing 1134261728 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_21 ; empty space on disk = 27601037950976 bytes ... done
+Writing 1146978248 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_22 ; empty space on disk = 27600103669760 bytes ...Writing 1211665616 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_23 ; empty space on disk = 27600103669760 bytes ...Writing 1170932104 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_20 ; empty space on disk = 27600103669760 bytes ... done
+ done
+ done
+Writing 1200452248 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_19 ; empty space on disk = 27596900270080 bytes ...Writing 1178862352 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_18 ; empty space on disk = 27596900270080 bytes ... done
+ done
+Writing 1189258160 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_25 ; empty space on disk = 27594509516800 bytes ... done
+Writing 1243780232 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_24 ; empty space on disk = 27593651781632 bytes ... done
+Writing 1172299520 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_26 ; empty space on disk = 27592022294528 bytes ... done
+Writing 1233202872 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_27 ; empty space on disk = 27591228522496 bytes ...Writing 1080021528 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_29 ; empty space on disk = 27591033487360 bytes ... done
+ done
+Writing 511976248 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_36 ; empty space on disk = 27588948918272 bytes ... done
+Writing 1252080320 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_28 ; empty space on disk = 27588373250048 bytes ... done
+Writing 1053967224 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_33 ; empty space on disk = 27587216670720 bytes ... done
+Writing 1153913672 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_35 ; empty space on disk = 27586634711040 bytes ... done
+Writing 1162506440 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_32 ; empty space on disk = 27585597669376 bytes ...Writing 1160376784 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_34 ; empty space on disk = 27585597669376 bytes ...Writing 1128623328 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_30 ; empty space on disk = 27585597669376 bytes ... done
+ done
+ done
+Writing 1188653536 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_31 ; empty space on disk = 27582495981568 bytes ... done
+Feb 08 23:53:08 ... loading chunks from disk, packing SA...
+Feb 08 23:56:38 ... finished generating suffix array
+Feb 08 23:56:38 ... Generating Suffix Array index
+Feb 08 23:59:52 ... Completed Suffix Array index
+Feb 08 23:59:52 ..... processing annotations GTF
+Processing sjdbGTFfile=/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf, found:
+		100241 transcripts
+		653414 exons (non-collapsed)
+		248076 collapsed junctions
+Feb 09 00:00:09 ..... finished GTF processing
+Feb 09 00:00:09   Loaded database junctions from the GTF file: /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf: 248076 total junctions
 
-EXITING because of INPUT ERROR: the file format of the genomeFastaFile: /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa.gzis not fasta: the first character is  , not > .
- Solution: check formatting of the fasta file. Make sure the file is uncompressed (unzipped).
-
-Feb 08 23:34:14 ...... FATAL ERROR, exiting
+WARNING: long repeat for junction # 75359 : chr5 112774527 112775017; left shift = 255; right shift = 69
+WARNING: long repeat for junction # 111961 : chr7 141808196 141810304; left shift = 255; right shift = 255
+Feb 09 00:00:10   Finished preparing junctions
+Feb 09 00:00:10 ..... inserting junctions into the genome indices
+Feb 09 00:00:24   Finished SA search: number of new junctions=247992, old junctions=0
+Feb 09 00:00:39   Finished sorting SA indicesL nInd=49598342
+Feb 09 00:01:35   Finished inserting junction indices
+Feb 09 00:01:45   Finished SAi
+Feb 09 00:01:45 ..... finished inserting junctions into genome
+Feb 09 00:01:45 ... writing Genome to disk ...
+Writing 2773364888 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/Genome ; empty space on disk = 27611487010816 bytes ... done
+SA size in bytes: 22131796784
+Feb 09 00:02:12 ... writing Suffix Array to disk ...
+Writing 22131796784 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA ; empty space on disk = 27609376227328 bytes ... done
+Feb 09 00:05:57 ... writing SAindex to disk
+Writing 8 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SAindex ; empty space on disk = 27592310652928 bytes ... done
+Writing 120 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SAindex ; empty space on disk = 27592310652928 bytes ... done
+Writing 1565873491 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SAindex ; empty space on disk = 27592310652928 bytes ... done
+Feb 09 00:06:29 ..... finished successfully
+DONE: Genome generation, EXITING
