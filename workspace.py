@@ -11,11 +11,16 @@ cell_arr=("GLU" "GABA")
 for c in "${cell_arr[@]}"
 do
     echo $c
-    allcools merge-allc \
-        --cpu 12 \
-        --allc_paths $inpath$c/list.txt \
-        --output_path $outpath/$c/ \
-        --chrom_size_path /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/modified_mm10.chrom.sizes
+    for num in 1 2
+    do
+        echo Doing $num
+        allcools merge-allc \
+            --cpu 30 \
+            --allc_paths $inpath$c/list$num.txt \
+            --output_path $outpath/$c/$num/ \
+            --chrom_size_path /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/modified_mm10.chrom.sizes
+        echo Done $num
+    done
 done
 echo Done
 

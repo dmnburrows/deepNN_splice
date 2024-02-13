@@ -1,154 +1,12 @@
-STAR version=STAR_2.5.1b_modified
-STAR compilation time,server,dir=Fri Mar 4 15:25:07 EST 2016 florence.cshl.edu:/sonas-hs/gingeras/nlsas_norepl/user/dobin/STAR/STAR.sandbox/source
-##### DEFAULT parameters:
-versionSTAR                       20201
-versionGenome                     20101   20200   
-parametersFiles                   -   
-sysShell                          -
-runMode                           alignReads
-runThreadN                        1
-runDirPerm                        User_RWX
-runRNGseed                        777
-genomeDir                         ./GenomeDir/
-genomeLoad                        NoSharedMemory
-genomeFastaFiles                  -   
-genomeSAindexNbases               14
-genomeChrBinNbits                 18
-genomeSAsparseD                   1
-genomeSuffixLengthMax             18446744073709551615
-readFilesIn                       Read1   Read2   
-readFilesCommand                  -   
-readMatesLengthsIn                NotEqual
-readMapNumber                     18446744073709551615
-readNameSeparator                 /   
-inputBAMfile                      -
-bamRemoveDuplicatesType           -
-bamRemoveDuplicatesMate2basesN    0
-limitGenomeGenerateRAM            31000000000
-limitIObufferSize                 150000000
-limitOutSAMoneReadBytes           100000
-limitOutSJcollapsed               1000000
-limitOutSJoneRead                 1000
-limitBAMsortRAM                   0
-limitSjdbInsertNsj                1000000
-outFileNamePrefix                 ./
-outTmpDir                         -
-outTmpKeep                        None
-outStd                            Log
-outReadsUnmapped                  None
-outQSconversionAdd                0
-outMultimapperOrder               Old_2.4
-outSAMtype                        SAM   
-outSAMmode                        Full
-outSAMstrandField                 None
-outSAMattributes                  Standard   
-outSAMunmapped                    None   
-outSAMorder                       Paired
-outSAMprimaryFlag                 OneBestScore
-outSAMreadID                      Standard
-outSAMmapqUnique                  255
-outSAMflagOR                      0
-outSAMflagAND                     65535
-outSAMattrRGline                  -   
-outSAMheaderHD                    -   
-outSAMheaderPG                    -   
-outSAMheaderCommentFile           -
-outBAMcompression                 1
-outBAMsortingThreadN              0
-outSAMfilter                      None   
-outSAMmultNmax                    18446744073709551615
-outSAMattrIHstart                 1
-outSJfilterReads                  All
-outSJfilterCountUniqueMin         3   1   1   1   
-outSJfilterCountTotalMin          3   1   1   1   
-outSJfilterOverhangMin            30   12   12   12   
-outSJfilterDistToOtherSJmin       10   0   5   10   
-outSJfilterIntronMaxVsReadN       50000   100000   200000   
-outWigType                        None   
-outWigStrand                      Stranded   
-outWigReferencesPrefix            -
-outWigNorm                        RPM   
-outFilterType                     Normal
-outFilterMultimapNmax             10
-outFilterMultimapScoreRange       1
-outFilterScoreMin                 0
-outFilterScoreMinOverLread        0.66
-outFilterMatchNmin                0
-outFilterMatchNminOverLread       0.66
-outFilterMismatchNmax             10
-outFilterMismatchNoverLmax        0.3
-outFilterMismatchNoverReadLmax    1
-outFilterIntronMotifs             None
-clip5pNbases                      0   
-clip3pNbases                      0   
-clip3pAfterAdapterNbases          0   
-clip3pAdapterSeq                  -   
-clip3pAdapterMMp                  0.1   
-winBinNbits                       16
-winAnchorDistNbins                9
-winFlankNbins                     4
-winAnchorMultimapNmax             50
-scoreGap                          0
-scoreGapNoncan                    -8
-scoreGapGCAG                      -4
-scoreGapATAC                      -8
-scoreStitchSJshift                1
-scoreGenomicLengthLog2scale       -0.25
-scoreDelBase                      -2
-scoreDelOpen                      -2
-scoreInsOpen                      -2
-scoreInsBase                      -2
-seedSearchLmax                    0
-seedSearchStartLmax               50
-seedSearchStartLmaxOverLread      1
-seedPerReadNmax                   1000
-seedPerWindowNmax                 50
-seedNoneLociPerWindow             10
-seedMultimapNmax                  10000
-alignIntronMin                    21
-alignIntronMax                    0
-alignMatesGapMax                  0
-alignTranscriptsPerReadNmax       10000
-alignSJoverhangMin                5
-alignSJDBoverhangMin              3
-alignSJstitchMismatchNmax         0   -1   0   0   
-alignSplicedMateMapLmin           0
-alignSplicedMateMapLminOverLmate    0.66
-alignWindowsPerReadNmax           10000
-alignTranscriptsPerWindowNmax     100
-alignEndsType                     Local
-alignSoftClipAtReferenceEnds      Yes
-alignEndsProtrude                 0   ConcordantPair   
-chimSegmentMin                    0
-chimScoreMin                      0
-chimScoreDropMax                  20
-chimScoreSeparation               10
-chimScoreJunctionNonGTAG          -1
-chimJunctionOverhangMin           20
-chimOutType                       SeparateSAMold
-chimFilter                        banGenomicN   
-chimSegmentReadGapMax             0
-sjdbFileChrStartEnd               -   
-sjdbGTFfile                       -
-sjdbGTFchrPrefix                  -
-sjdbGTFfeatureExon                exon
-sjdbGTFtagExonParentTranscript    transcript_id
-sjdbGTFtagExonParentGene          gene_id
-sjdbOverhang                      100
-sjdbScore                         2
-sjdbInsertSave                    Basic
-quantMode                         -   
-quantTranscriptomeBAMcompression    1
-quantTranscriptomeBan             IndelSoftclipSingleend
-twopass1readsN                    18446744073709551615
-twopassMode                       None
+STAR version=2.7.3a
+STAR compilation time,server,dir=<not set in Debian>
 ##### Command Line:
-STAR --runMode genomeGenerate --runThreadN 12 --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3 --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf --sjdbOverhang 50
+STAR --runMode genomeGenerate --runThreadN 15 --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf --sjdbOverhang 50
 ##### Initial USER parameters from Command Line:
 ###### All USER parameters from Command Line:
 runMode                       genomeGenerate     ~RE-DEFINED
-runThreadN                    12     ~RE-DEFINED
-genomeDir                     /cndd3/dburrows/DATA/annotations/genome/grcm38.p3     ~RE-DEFINED
+runThreadN                    15     ~RE-DEFINED
+genomeDir                     /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome     ~RE-DEFINED
 genomeFastaFiles              /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa        ~RE-DEFINED
 sjdbGTFfile                   /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf     ~RE-DEFINED
 sjdbOverhang                  50     ~RE-DEFINED
@@ -156,162 +14,19 @@ sjdbOverhang                  50     ~RE-DEFINED
 
 ##### Final user re-defined parameters-----------------:
 runMode                           genomeGenerate
-runThreadN                        12
-genomeDir                         /cndd3/dburrows/DATA/annotations/genome/grcm38.p3
+runThreadN                        15
+genomeDir                         /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome
 genomeFastaFiles                  /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa   
 sjdbGTFfile                       /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf
 sjdbOverhang                      50
 
 -------------------------------
 ##### Final effective command line:
-STAR   --runMode genomeGenerate   --runThreadN 12   --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3   --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa      --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf   --sjdbOverhang 50
-
-##### Final parameters after user input--------------------------------:
-versionSTAR                       20201
-versionGenome                     20101   20200   
-parametersFiles                   -   
-sysShell                          -
-runMode                           genomeGenerate
-runThreadN                        12
-runDirPerm                        User_RWX
-runRNGseed                        777
-genomeDir                         /cndd3/dburrows/DATA/annotations/genome/grcm38.p3
-genomeLoad                        NoSharedMemory
-genomeFastaFiles                  /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa   
-genomeSAindexNbases               14
-genomeChrBinNbits                 18
-genomeSAsparseD                   1
-genomeSuffixLengthMax             18446744073709551615
-readFilesIn                       Read1   Read2   
-readFilesCommand                  -   
-readMatesLengthsIn                NotEqual
-readMapNumber                     18446744073709551615
-readNameSeparator                 /   
-inputBAMfile                      -
-bamRemoveDuplicatesType           -
-bamRemoveDuplicatesMate2basesN    0
-limitGenomeGenerateRAM            31000000000
-limitIObufferSize                 150000000
-limitOutSAMoneReadBytes           100000
-limitOutSJcollapsed               1000000
-limitOutSJoneRead                 1000
-limitBAMsortRAM                   0
-limitSjdbInsertNsj                1000000
-outFileNamePrefix                 ./
-outTmpDir                         -
-outTmpKeep                        None
-outStd                            Log
-outReadsUnmapped                  None
-outQSconversionAdd                0
-outMultimapperOrder               Old_2.4
-outSAMtype                        SAM   
-outSAMmode                        Full
-outSAMstrandField                 None
-outSAMattributes                  Standard   
-outSAMunmapped                    None   
-outSAMorder                       Paired
-outSAMprimaryFlag                 OneBestScore
-outSAMreadID                      Standard
-outSAMmapqUnique                  255
-outSAMflagOR                      0
-outSAMflagAND                     65535
-outSAMattrRGline                  -   
-outSAMheaderHD                    -   
-outSAMheaderPG                    -   
-outSAMheaderCommentFile           -
-outBAMcompression                 1
-outBAMsortingThreadN              0
-outSAMfilter                      None   
-outSAMmultNmax                    18446744073709551615
-outSAMattrIHstart                 1
-outSJfilterReads                  All
-outSJfilterCountUniqueMin         3   1   1   1   
-outSJfilterCountTotalMin          3   1   1   1   
-outSJfilterOverhangMin            30   12   12   12   
-outSJfilterDistToOtherSJmin       10   0   5   10   
-outSJfilterIntronMaxVsReadN       50000   100000   200000   
-outWigType                        None   
-outWigStrand                      Stranded   
-outWigReferencesPrefix            -
-outWigNorm                        RPM   
-outFilterType                     Normal
-outFilterMultimapNmax             10
-outFilterMultimapScoreRange       1
-outFilterScoreMin                 0
-outFilterScoreMinOverLread        0.66
-outFilterMatchNmin                0
-outFilterMatchNminOverLread       0.66
-outFilterMismatchNmax             10
-outFilterMismatchNoverLmax        0.3
-outFilterMismatchNoverReadLmax    1
-outFilterIntronMotifs             None
-clip5pNbases                      0   
-clip3pNbases                      0   
-clip3pAfterAdapterNbases          0   
-clip3pAdapterSeq                  -   
-clip3pAdapterMMp                  0.1   
-winBinNbits                       16
-winAnchorDistNbins                9
-winFlankNbins                     4
-winAnchorMultimapNmax             50
-scoreGap                          0
-scoreGapNoncan                    -8
-scoreGapGCAG                      -4
-scoreGapATAC                      -8
-scoreStitchSJshift                1
-scoreGenomicLengthLog2scale       -0.25
-scoreDelBase                      -2
-scoreDelOpen                      -2
-scoreInsOpen                      -2
-scoreInsBase                      -2
-seedSearchLmax                    0
-seedSearchStartLmax               50
-seedSearchStartLmaxOverLread      1
-seedPerReadNmax                   1000
-seedPerWindowNmax                 50
-seedNoneLociPerWindow             10
-seedMultimapNmax                  10000
-alignIntronMin                    21
-alignIntronMax                    0
-alignMatesGapMax                  0
-alignTranscriptsPerReadNmax       10000
-alignSJoverhangMin                5
-alignSJDBoverhangMin              3
-alignSJstitchMismatchNmax         0   -1   0   0   
-alignSplicedMateMapLmin           0
-alignSplicedMateMapLminOverLmate    0.66
-alignWindowsPerReadNmax           10000
-alignTranscriptsPerWindowNmax     100
-alignEndsType                     Local
-alignSoftClipAtReferenceEnds      Yes
-alignEndsProtrude                 0   ConcordantPair   
-chimSegmentMin                    0
-chimScoreMin                      0
-chimScoreDropMax                  20
-chimScoreSeparation               10
-chimScoreJunctionNonGTAG          -1
-chimJunctionOverhangMin           20
-chimOutType                       SeparateSAMold
-chimFilter                        banGenomicN   
-chimSegmentReadGapMax             0
-sjdbFileChrStartEnd               -   
-sjdbGTFfile                       /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf
-sjdbGTFchrPrefix                  -
-sjdbGTFfeatureExon                exon
-sjdbGTFtagExonParentTranscript    transcript_id
-sjdbGTFtagExonParentGene          gene_id
-sjdbOverhang                      50
-sjdbScore                         2
-sjdbInsertSave                    Basic
-quantMode                         -   
-quantTranscriptomeBAMcompression    1
-quantTranscriptomeBan             IndelSoftclipSingleend
-twopass1readsN                    18446744073709551615
-twopassMode                       None
+STAR   --runMode genomeGenerate   --runThreadN 15   --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome   --genomeFastaFiles /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa      --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf   --sjdbOverhang 50
 ----------------------------------------
 
 Finished loading and checking parameters
-Feb 08 23:38:27 ... starting to generate Genome files
+Feb 12 15:31:56 ... starting to generate Genome files
 /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 0  "chr1" chrStart: 0
 /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 1  "chr2" chrStart: 195559424
 /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 2  "chr3" chrStart: 377749504
@@ -392,76 +107,90 @@ Feb 08 23:38:27 ... starting to generate Genome files
 /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 77  "JH584302.1" chrStart: 2747531264
 /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 78  "JH584303.1" chrStart: 2747793408
 /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/GRCm38.p3.genome.fa : chr # 79  "JH584304.1" chrStart: 2748055552
+Estimated genome size=2849317696   2748317696   101000000
+GstrandBit=32
 Number of SA indices: 5315685726
-Feb 08 23:40:13 ... starting to sort Suffix Array. This may take a long time...
-Number of chunks: 37;   chunks size limit: 1275167224 bytes
-Feb 08 23:40:25 ... sorting Suffix Array chunks and saving them to disk...
-Writing 996537224 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_1 ; empty space on disk = 27620743839744 bytes ... done
-Writing 1062221376 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_0 ; empty space on disk = 27620085334016 bytes ... done
-Writing 1082476856 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_5 ; empty space on disk = 27619087089664 bytes ...Writing 1141938600 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_3 ; empty space on disk = 27619087089664 bytes ... done
+Feb 12 15:32:51 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 47;   chunks size limit: 1020133776 bytes
+Feb 12 15:33:08 ... sorting Suffix Array chunks and saving them to disk...
+Writing 764605056 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_6 ; empty space on disk = 28140016500736 bytes ... done
+Writing 828571528 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_7 ; empty space on disk = 28139346460672 bytes ... done
+Writing 797368200 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_14 ; empty space on disk = 28139023499264 bytes ... done
+Writing 851639448 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_2 ; empty space on disk = 28138907107328 bytes ... done
+Writing 751156880 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_0 ; empty space on disk = 28138340876288 bytes ... done
+Writing 845892152 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_3 ; empty space on disk = 28137317466112 bytes ... done
+Writing 917801216 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_13 ; empty space on disk = 28135915520000 bytes ... done
+Writing 986542008 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_4 ; empty space on disk = 28135195148288 bytes ... done
+Writing 827654936 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_8 ; empty space on disk = 28134490505216 bytes ... done
+Writing 805053208 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_11 ; empty space on disk = 28133792153600 bytes ... done
+Writing 936221440 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_1 ; empty space on disk = 28133561466880 bytes ... done
+Writing 929244280 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_9 ; empty space on disk = 28132136452096 bytes ... done
+Writing 932197768 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_10 ; empty space on disk = 28131376234496 bytes ... done
+Writing 1009201064 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_5 ; empty space on disk = 28130673688576 bytes ... done
+Writing 1017002960 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_12 ; empty space on disk = 28130239578112 bytes ... done
+Writing 964733208 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_15 ; empty space on disk = 28128956121088 bytes ... done
+Writing 798446232 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_17 ; empty space on disk = 28128166543360 bytes ... done
+Writing 1004978544 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_19 ; empty space on disk = 28127513280512 bytes ... done
+Writing 1020100392 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_18 ; empty space on disk = 28126667079680 bytes ... done
+Writing 963489128 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_16 ; empty space on disk = 28125964533760 bytes ... done
+Writing 874650760 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_22 ; empty space on disk = 28125263036416 bytes ... done
+Writing 865558328 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_24 ; empty space on disk = 28124561539072 bytes ... done
+Writing 918254880 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_26 ; empty space on disk = 28123498283008 bytes ...Writing 954627136 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_23 ; empty space on disk = 28123498283008 bytes ... done
  done
-Writing 1126221352 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_6 ; empty space on disk = 27617252081664 bytes ...Writing 1170754728 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_2 ; empty space on disk = 27617252081664 bytes ...Writing 1221334376 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_4 ; empty space on disk = 27617252081664 bytes ...Writing 1185072824 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_9 ; empty space on disk = 27617252081664 bytes ...Writing 1192396840 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_11 ; empty space on disk = 27617252081664 bytes ...Writing 1236557912 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_8 ; empty space on disk = 27617252081664 bytes ...Writing 1208483928 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_10 ; empty space on disk = 27617241595904 bytes ...Writing 1261867480 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_7 ; empty space on disk = 27617241595904 bytes ... done
+Writing 975699352 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_29 ; empty space on disk = 28121858310144 bytes ... done
+Writing 936242216 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_21 ; empty space on disk = 28121711509504 bytes ... done
+Writing 967308288 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_27 ; empty space on disk = 28120454266880 bytes ... done
+Writing 994359336 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_20 ; empty space on disk = 28120138645504 bytes ... done
+Writing 1006328048 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_25 ; empty space on disk = 28118662250496 bytes ... done
+Writing 1020077960 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_28 ; empty space on disk = 28118076096512 bytes ... done
+Writing 882305424 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_30 ; empty space on disk = 28117004451840 bytes ... done
+Writing 861902320 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_34 ; empty space on disk = 28116281982976 bytes ... done
+Writing 884095688 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_32 ; empty space on disk = 28115580485632 bytes ... done
+Writing 891294800 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_31 ; empty space on disk = 28114878988288 bytes ... done
+Writing 858250976 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_38 ; empty space on disk = 28114124013568 bytes ... done
+Writing 764120104 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_43 ; empty space on disk = 28113862918144 bytes ... done
+Writing 819268200 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_42 ; empty space on disk = 28113422516224 bytes ...Writing 891010864 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_41 ; empty space on disk = 28113422516224 bytes ... done
  done
+Writing 1005669240 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_33 ; empty space on disk = 28111874818048 bytes ... done
+Writing 815314272 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_36 ; empty space on disk = 28110575632384 bytes ...Writing 843093304 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_35 ; empty space on disk = 28110575632384 bytes ... done
  done
- done
- done
- done
- done
- done
-Writing 1242510984 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_12 ; empty space on disk = 27607726817280 bytes ... done
-Writing 1224014952 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_13 ; empty space on disk = 27606835527680 bytes ... done
-Writing 1150493216 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_15 ; empty space on disk = 27605207089152 bytes ... done
-Writing 1217824296 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_14 ; empty space on disk = 27604633518080 bytes ... done
-Writing 1069172448 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_17 ; empty space on disk = 27603312312320 bytes ... done
-Writing 1161794256 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_16 ; empty space on disk = 27602535317504 bytes ... done
-Writing 1134261728 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_21 ; empty space on disk = 27601037950976 bytes ... done
-Writing 1146978248 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_22 ; empty space on disk = 27600103669760 bytes ...Writing 1211665616 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_23 ; empty space on disk = 27600103669760 bytes ...Writing 1170932104 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_20 ; empty space on disk = 27600103669760 bytes ... done
- done
- done
-Writing 1200452248 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_19 ; empty space on disk = 27596900270080 bytes ...Writing 1178862352 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_18 ; empty space on disk = 27596900270080 bytes ... done
- done
-Writing 1189258160 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_25 ; empty space on disk = 27594509516800 bytes ... done
-Writing 1243780232 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_24 ; empty space on disk = 27593651781632 bytes ... done
-Writing 1172299520 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_26 ; empty space on disk = 27592022294528 bytes ... done
-Writing 1233202872 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_27 ; empty space on disk = 27591228522496 bytes ...Writing 1080021528 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_29 ; empty space on disk = 27591033487360 bytes ... done
- done
-Writing 511976248 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_36 ; empty space on disk = 27588948918272 bytes ... done
-Writing 1252080320 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_28 ; empty space on disk = 27588373250048 bytes ... done
-Writing 1053967224 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_33 ; empty space on disk = 27587216670720 bytes ... done
-Writing 1153913672 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_35 ; empty space on disk = 27586634711040 bytes ... done
-Writing 1162506440 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_32 ; empty space on disk = 27585597669376 bytes ...Writing 1160376784 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_34 ; empty space on disk = 27585597669376 bytes ...Writing 1128623328 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_30 ; empty space on disk = 27585597669376 bytes ... done
- done
- done
-Writing 1188653536 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA_31 ; empty space on disk = 27582495981568 bytes ... done
-Feb 08 23:53:08 ... loading chunks from disk, packing SA...
-Feb 08 23:56:38 ... finished generating suffix array
-Feb 08 23:56:38 ... Generating Suffix Array index
-Feb 08 23:59:52 ... Completed Suffix Array index
-Feb 08 23:59:52 ..... processing annotations GTF
-Processing sjdbGTFfile=/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf, found:
+Writing 996348416 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_40 ; empty space on disk = 28109873086464 bytes ... done
+Writing 1007619392 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_39 ; empty space on disk = 28108402982912 bytes ... done
+Writing 902451280 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_44 ; empty space on disk = 28107701485568 bytes ... done
+Writing 971845656 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_37 ; empty space on disk = 28106818584576 bytes ... done
+Writing 863230960 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_45 ; empty space on disk = 28105783640064 bytes ... done
+Writing 802658960 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA_46 ; empty space on disk = 28105049636864 bytes ... done
+Feb 12 15:47:35 ... loading chunks from disk, packing SA...
+Feb 12 15:49:47 ... finished generating suffix array
+Feb 12 15:49:47 ... generating Suffix Array index
+Feb 12 15:53:31 ... completed Suffix Array index
+Feb 12 15:53:31 ..... processing annotations GTF
+Processing pGe.sjdbGTFfile=/cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf, found:
 		100241 transcripts
 		653414 exons (non-collapsed)
 		248076 collapsed junctions
-Feb 09 00:00:09 ..... finished GTF processing
-Feb 09 00:00:09   Loaded database junctions from the GTF file: /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf: 248076 total junctions
+Feb 12 15:53:37 ..... finished GTF processing
+Feb 12 15:53:37   Loaded database junctions from the GTF file: /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf: 248076 total junctions
 
 WARNING: long repeat for junction # 75359 : chr5 112774527 112775017; left shift = 255; right shift = 69
 WARNING: long repeat for junction # 111961 : chr7 141808196 141810304; left shift = 255; right shift = 255
-Feb 09 00:00:10   Finished preparing junctions
-Feb 09 00:00:10 ..... inserting junctions into the genome indices
-Feb 09 00:00:24   Finished SA search: number of new junctions=247992, old junctions=0
-Feb 09 00:00:39   Finished sorting SA indicesL nInd=49598342
-Feb 09 00:01:35   Finished inserting junction indices
-Feb 09 00:01:45   Finished SAi
-Feb 09 00:01:45 ..... finished inserting junctions into genome
-Feb 09 00:01:45 ... writing Genome to disk ...
-Writing 2773364888 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/Genome ; empty space on disk = 27611487010816 bytes ... done
+Feb 12 15:53:38   Finished preparing junctions
+Feb 12 15:53:38 ..... inserting junctions into the genome indices
+Feb 12 15:53:56   Finished SA search: number of new junctions=247992, old junctions=0
+Feb 12 15:54:15   Finished sorting SA indicesL nInd=49598342
+Genome size with junctions=2773364888  2748317696   25047192
+GstrandBit1=32   GstrandBit=32
+Feb 12 15:55:13   Finished inserting junction indices
+Feb 12 15:55:28   Finished SAi
+Feb 12 15:55:28 ..... finished inserting junctions into genome
+Feb 12 15:55:28 ... writing Genome to disk ...
+Writing 2773364888 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/Genome ; empty space on disk = 28202080665600 bytes ... done
 SA size in bytes: 22131796784
-Feb 09 00:02:12 ... writing Suffix Array to disk ...
-Writing 22131796784 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SA ; empty space on disk = 27609376227328 bytes ... done
-Feb 09 00:05:57 ... writing SAindex to disk
-Writing 8 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SAindex ; empty space on disk = 27592310652928 bytes ... done
-Writing 120 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SAindex ; empty space on disk = 27592310652928 bytes ... done
-Writing 1565873491 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/SAindex ; empty space on disk = 27592310652928 bytes ... done
-Feb 09 00:06:29 ..... finished successfully
+Feb 12 15:55:32 ... writing Suffix Array to disk ...
+Writing 22131796784 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SA ; empty space on disk = 28200671379456 bytes ... done
+Feb 12 15:56:19 ... writing SAindex to disk
+Writing 8 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SAindex ; empty space on disk = 28178604097536 bytes ... done
+Writing 120 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SAindex ; empty space on disk = 28178604097536 bytes ... done
+Writing 1565873491 bytes into /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome/SAindex ; empty space on disk = 28178604097536 bytes ... done
+Feb 12 15:56:24 ..... finished successfully
 DONE: Genome generation, EXITING
