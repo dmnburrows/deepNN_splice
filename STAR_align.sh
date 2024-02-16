@@ -8,7 +8,7 @@ out=$3 #out path
 
 STAR --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome \
      --readFilesIn $r1 $r2 \
-     --runThreadN 12 \
+     --runThreadN 10 \
      --outFileNamePrefix $out \
      --readFilesCommand zcat \
      --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_patch_hapl_scaff.annotation.gtf \
@@ -25,10 +25,11 @@ STAR --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome \
      --outSAMattributes All \
      --sjdbScore 1 \
      --genomeLoad NoSharedMemory \
-     --limitBAMsortRAM 10000000000 \
+     --limitBAMsortRAM 65000000000 \
      --quantMode TranscriptomeSAM GeneCounts \
      --winAnchorMultimapNmax 200 \
      --outMultimapperOrder Random \
      --outSAMmultNmax -1 \
+     --limitOutSJcollapsed 2000000
      
      
