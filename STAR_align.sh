@@ -14,7 +14,7 @@ STAR --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome.1
      --sjdbGTFfile /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/gencode.vM3.chr_1-19-X.annotation.gtf \
      --outSAMtype BAM Unsorted \
      --sjdbOverhang 50 \
-     --alignSJoverhangMin 8 \
+     --alignSJoverhangMin 20 \
      --alignSJDBoverhangMin 3 \
      --alignIntronMin 20 \
      --alignIntronMax 1000000 \
@@ -30,4 +30,9 @@ STAR --genomeDir /cndd3/dburrows/DATA/annotations/genome/grcm38.p3/STAR_genome.1
      --winAnchorMultimapNmax 200 \
      --outMultimapperOrder Random \
      --outSAMmultNmax -1 \
-     --limitOutSJcollapsed 2000000
+     --limitOutSJcollapsed 2000000 \
+     --outSJfilterOverhangMin -1 -1 -1 -1 
+     
+
+
+     

@@ -6,14 +6,15 @@ code_path=/cndd3/dburrows/CODE/deepNN_splice/STAR_align.sh
 chmod u+x $code_path
 scp $code_path $out_path/log.workspace.STAR_align
 
-cell_arr=("L6_CT")
+cell_arr=('L2-3_IT' 'L5_IT' 'L6_IT' 'L6_CT' 'L6b' 'Vip' 'Pvalb' 'Sst' 'Lamp5' )
 for c in ${cell_arr[@]}
 do
     curr=($(ls $in_path$c/*val*fq.gz))
     echo ${curr[0]}
     echo ${curr[1]}
     $code_path ${curr[0]} ${curr[1]} $out_path$c/
-    #samtools index $out_path$c/Aligned.sortedByCoord.out.bam
+  samtools index $out_path$c/Aligned.sortedByCoord.out.bam
     
 done
 echo Done
+
