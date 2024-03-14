@@ -47,8 +47,8 @@ name_l = glu_l + gaba_l
 data_l = ['ATAC']
 #PARS
 path = '/cndd2/dburrows/DATA/splice/snatacseq-atac_MOp_biccn/pseudobulk/gran1/'
-for cell in name_l[:1]:
-    for d in data_l[:1]:
+for cell in name_l:
+    for d in data_l:
         print(glob.glob(path+cell+'/*'+d+'*merge.bingraph.raw')[0])
         curr = pd.read_csv(glob.glob(path+cell+'/*'+d+'*merge.bingraph.raw')[0], sep='\t', 
                            low_memory=False)
