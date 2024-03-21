@@ -362,9 +362,9 @@ def epiflank_store(path, sub, binsize, n_bins, pos_enc):
 
     #loop through each chr for current celltype
     for ch in curr['chr'].unique():
-        print(ch, path)
         curr_chr = curr[curr['chr'] == ch] #access chromosome bingraph
         curr_chr.index = np.arange(0,len(curr_chr)) #reset index
+        assert np.unique(np.diff(curr_chr['start'])) == binsize, 'some bins not correct spacing'
 
         chr_sub = sub[sub['chromosome'] == 'chr'+ch] #access chromosome SJ
         chr_sub.index = np.arange(0,len(chr_sub)) #reset index
@@ -394,4 +394,118 @@ def epiflank_store(path, sub, binsize, n_bins, pos_enc):
     return(li)
 
 
+#================================================================================
+def epiflank_store_multidata(cell, data_l, sub, binsize, n_bins, pos_enc):
+#================================================================================
+
+    """
+    This function computes the computes flanking epi context over a list of epi datasets and outputs them as separate lists.
+    
+    Inputs:
+    cell (str): celltype
+    data_l (list): list of datatypers
+    sub (dataframe): dataframe of cell SJs
+    binsize (int): size of each bin
+    n_bins (int): number of bins covering entire flanking context
+    pos_enc (list): list of positional encodings
+
+    
+    Outputs:
+    cg_ (df): dataframe of CG SJ flanks
+    ch_ (df): dataframe of CH SJ flanks
+    atac_ (df): dataframe of ATAC SJ flanks
+    
+    """
+    print(f'Running {cell}')
+    assert len(sub) > 0, 'wrong cell name'
+    
+    #cellspecific lists
+    cg_list, ch_list, atac_list, ind_l = [], [], [],[]
+
+    #loop over each datatype
+    for d in data_l:
+        if 'CG' in d or 'CAC' in d: path = '/cndd2/dburrows/DATA/splice/snmcseq-mc_MOp_biccn/pseudobulk/gran1/' + cell + '/' + cell + '_' + d + '.norm.smoothe8.bingraph.raw'
+        elif 'ATAC' in d: path = '/cndd2/dburrows/DATA/splice/snatacseq-atac_MOp_biccn/pseudobulk/gran1/' + cell + '/' + cell + '_' + d + '.norm-CPM.smoothe8.bingraph.raw'
+
+        #compute flank list for each cell + datatype
+        li = epiflank_store(path, sub, binsize, n_bins, pos_enc) 
+        if 'CG' in d: cg_list = li
+        elif 'CAC' in d: ch_list = li
+        elif 'ATAC' in d: atac_list = li
+
+    #cat into dataframes
+    cg_ = pd.concat(cg_list)
+    ch_ = pd.concat(ch_list)
+    atac_ = pd.concat(atac_list)
+    return(cg_, ch_, atac_)
+
+#================================================================================
+def run_epiflank_store_pool(flank, binsize, data_l, tot, name_l, cores):
+#================================================================================
+
+    """
+    This function pools the celltype epiflank information together. 
+    
+    Inputs:
+    flank (int): flanking bp length on one side, ie. total_flank = flank*2
+    binsize (int): size of each bin
+    data_l (list): list of datatypes
+    tot (dataframe): dataframe of all SJs
+    name_l (list): list of cellnames
+    cores (int): number of cores
+    
+    """
+    
+    import sys
+    import os
+    import glob
+    import pandas as pd
+    from matplotlib import pyplot as plt
+    import numpy as np
+    from multiprocessing import Pool
+    import multiprocessing
+
+    #if flank not equally divisible, deal with remaining sequence
+    #NEVER CLIP DATA, always add extra bin -> consistency across SJs
+    n_bins = int(np.ceil((2*flank)/binsize))
+    if n_bins%2 ==0: n_bins+=1 #make sure bin number is odd, to allow even number of bins either side
+
+    #make sure 0 surrounded by even numbers on both sides
+    pos_enc = np.arange(-1*(np.floor(n_bins/2)),(np.floor(n_bins/2)+1))
+    assert len(pos_enc) == n_bins, 'incorrect nbins in positional encoding'
+    assert sum(pos_enc > 0) == sum(pos_enc < 0), 'uneven numbers of bins for + or -'
+    pos_enc = pos_enc.tolist()
+
+    #declare output lists
+    cg_list, ch_list, atac_list, ind_l = [], [], [],[]
+    
+    #define arglist
+    sub_l = [tot[tot['cell'] == f] for f in name_l]
+    arglist = [(cell, data_l, sub_l[f], binsize, n_bins, pos_enc) for f,cell in enumerate(name_l)]
+    with multiprocessing.Pool(cores) as pool:
+        results = pool.starmap(epiflank_store_multidata, arglist)
+        
+    cg_list, ch_list, atac_list = zip(*results)
+
+    cg_df = pd.concat(cg_list)
+    ch_df = pd.concat(ch_list)
+    atac_df = pd.concat(atac_list)
+    
+    print("All data grouped.")
+    
+    cg_df.to_csv('/cndd2/dburrows/DATA/splice/model/processed_data/CG.bingraph.raw', sep='\t', index=True)
+    ch_df.to_csv('/cndd2/dburrows/DATA/splice/model/processed_data/CAC.bingraph.raw', sep='\t', index=True)
+    atac_df.to_csv('/cndd2/dburrows/DATA/splice/model/processed_data/ATAC.bingraph.raw', sep='\t', index=True)
+
+    print("All data saved.")
+    
+    assert len(cg_df.index) == len(tot), 'some SJs missing in CG file'
+    assert len(ch_df.index) == len(tot), 'some SJs missing in CH file'
+    assert len(atac_df.index) == len(tot), 'some SJs missing in ATAC file'
+
+    assert sum(np.in1d(cg_df.index, tot['id-unique'])) == len(cg_df.index), 'some SJs missing in CG file'
+    assert sum(np.in1d(ch_df.index, tot['id-unique'])) == len(ch_df.index), 'some SJs missing in CH file'
+    assert sum(np.in1d(atac_df.index, tot['id-unique'])) == len(atac_df.index), 'some SJs missing in ATAC file'
+    print("All data pass QC.")
+                    
         
