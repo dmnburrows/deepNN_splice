@@ -31,6 +31,20 @@ print(f'Python version {sys.version}')
 print(f'Python path {sys.executable}')
 
 
+#load in SJs
+tot = pd.read_csv('/cndd2/dburrows/DATA/splice/model/processed_data/SJ.comb.bed', 
+                 sep='\t', index_col=0)
+
+#SMOOTHE + MEAN
+#=====================
+#PARS
+window_size = 8 #8 -> change???
+min_entries = 1 #minimum values in window to compute mean
+
+flank = 5000 #flanking context either side
+binsize=128
+
+
 #STORE all epi data into dataframe
 #======================================
 
@@ -93,7 +107,7 @@ for cell in name_l:
                 #strand swap positions
                 if sj['strand'] == '-': vec = vec[::-1]
                 # Creating the DataFrame
-                vec = pd.DataFrame(data=[vec_flat], index=[ind], columns=pos_enc)
+                vec = pd.DataFrame(data=[vec], index=[ind], columns=pos_enc)
                 
                 if 'CG' in d: cg_=pd.concat([cg_, vec])
                 elif 'CAC' in d: ch_=pd.concat([ch_, vec])
