@@ -509,3 +509,53 @@ def run_epiflank_store_pool(flank, binsize, data_l, tot, name_l, cores):
     print("All data pass QC.")
                     
         
+
+#==================================================================
+def remove_nans_impute(curr, max_nan=10):
+#==================================================================
+
+    """
+    Remove rows with more than `max_nan` NaN values and impute remaining NaNs by taking the mean of values 
+    to the immediate left and right in the DataFrame `curr`. This process repeats, increasing the distance 
+    from which the mean is calculated until no NaNs remain or all possible imputations have been attempted.
+
+    Parameters:
+    - curr: pd.DataFrame
+        The input DataFrame containing epi info from splice junctions (SJs) with potential NaN values.
+    - max_nan: int, default = 10
+        The maximum number of NaN values allowed per row (SJ). Rows exceeding this threshold are removed.
+
+    Returns:
+    - tuple: (pd.DataFrame, np.ndarray)
+        - The modified DataFrame with NaNs imputed where possible and rows with excess NaNs removed.
+        - An array of indices for rows (SJs) removed due to exceeding the `max_nan` threshold.
+
+    Raises:
+    - AssertionError: If NaNs still exist after attempting imputation.
+
+    """
+    # Find number of NaNs per SJ and identify SJs to remove
+    sum_nan = np.sum(np.isnan(curr.values), axis=1)
+    remove_id = curr[sum_nan > max_nan].index.values
+    sub_curr = curr[sum_nan <= max_nan].copy()  # Extract only SJs with fewer NaNs than max_nan
+
+    # Keep looping until no NaNs remain
+    count = 1
+    while np.sum(np.isnan(sub_curr.values)) > 0:
+        loc = np.where(np.isnan(sub_curr.values) == True)
+        left = loc[0], loc[1] - count
+        left[1][left[1] < 0] = 0
+        right = loc[0], loc[1] + count
+        right[1][right[1] >= curr.shape[1]] = curr.shape[1] - 1
+
+        new_v = np.nanmean(np.vstack((sub_curr.values[left], sub_curr.values[right])), axis=0)  # Take mean either side, ignore NaNs
+        sub_curr.values[loc] = new_v
+        count += 1
+
+    assert np.sum(np.isnan(sub_curr.values)) == 0, 'NaNs still left after imputation'
+
+    return sub_curr, remove_id
+
+
+
+        
