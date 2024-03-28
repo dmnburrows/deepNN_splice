@@ -493,21 +493,29 @@ def run_epiflank_store_pool(flank, binsize, data_l, tot, name_l, cores):
     
     print("All data grouped.")
     
+    assert len(cg_df.index) == len(tot), 'some SJs missing in CG file'
+    assert len(ch_df.index) == len(tot), 'some SJs missing in CH file'
+    assert len(atac_df.index) == len(tot), 'some SJs missing in ATAC file'
+    
+    tot.index = tot['id-unique'].values
+    #make sure same order as SJ file
+    cg_df = cg_df.loc[tot.index.values]
+    ch_df = ch_df.loc[tot.index.values]
+    atac_df = atac_df.loc[tot.index.values]
+
+    assert sum(tot.index.values == cg_df.index.values) == len(tot.index), 'some SJs missing in CG file'
+    assert sum(tot.index.values == ch_df.index.values) == len(tot.index), 'some SJs missing in CH file'
+    assert sum(tot.index.values == atac_df.index.values) == len(tot.index), 'some SJs missing in ATAC file'
+    print("All data pass QC.")
+                    
+    
     cg_df.to_csv('/cndd2/dburrows/DATA/splice/model/processed_data/CG.bingraph.raw', sep='\t', index=True)
     ch_df.to_csv('/cndd2/dburrows/DATA/splice/model/processed_data/CAC.bingraph.raw', sep='\t', index=True)
     atac_df.to_csv('/cndd2/dburrows/DATA/splice/model/processed_data/ATAC.bingraph.raw', sep='\t', index=True)
 
     print("All data saved.")
     
-    assert len(cg_df.index) == len(tot), 'some SJs missing in CG file'
-    assert len(ch_df.index) == len(tot), 'some SJs missing in CH file'
-    assert len(atac_df.index) == len(tot), 'some SJs missing in ATAC file'
 
-    assert sum(np.in1d(cg_df.index, tot['id-unique'])) == len(cg_df.index), 'some SJs missing in CG file'
-    assert sum(np.in1d(ch_df.index, tot['id-unique'])) == len(ch_df.index), 'some SJs missing in CH file'
-    assert sum(np.in1d(atac_df.index, tot['id-unique'])) == len(atac_df.index), 'some SJs missing in ATAC file'
-    print("All data pass QC.")
-                    
         
 
 #==================================================================
